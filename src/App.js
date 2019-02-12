@@ -19,9 +19,8 @@ class App extends Component {
       <h1><Link to='/' >Noteful</Link></h1>
       <Switch>
         <Route exact path='/' render={()=> <Folders folders ={this.state.STORE.folders}/>}/>
-        
-        <Route path='/folders/:folderId' render={(routeProps)=> <Folders folders ={this.state.STORE.folders}
-        fId ={routeProps.computedMatch.params.folderId} />}/>
+        <Route path='/folders/:folderId' render={(routeProps)=>  <Folders folders ={this.state.STORE.folders}
+        fId ={routeProps.match.params.folderId} />}/>
       </Switch>
       <Switch>
         <Route exact path='/' render={()=> <Notelist notes={this.state.STORE.notes}/>}/>
